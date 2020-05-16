@@ -74,8 +74,14 @@ p {
     margin-right: 10px;
 }
 
+#new-post {
+    margin-bottom: 10px;
+}
+
 .save {
-    float: right;
+    float: left;
+    margin-left: 35px;
+    margin-top: 5px;
 }
 
 .post-form textarea, .post-form input {
@@ -107,6 +113,7 @@ p {
 
 label {
     float: left;
+    width: 35px;
     padding-right: 10px;
 }
 
