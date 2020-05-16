@@ -2,16 +2,20 @@
     background-color: #05c5ff;
     margin-top: 0;
     padding: 20px 20px 30px 20px;
+    vertical-align: middle;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    vertical-align: middle;
 }
 
 .content {
-    margin-left: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
 }
 
 a.top-menu {
@@ -24,14 +28,30 @@ h1, h2, h3, h4 {
     margin-block-end: 0;
 }
 
-.post-content {
+.post-list-content {
+    margin-top: 15px;
+    max-height: 150px;
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: normal;
+    overflow: hidden;
+}
+
+.post-detailed-content {
     margin-top: 15px;
 }
+
 
 p {
     font-family: 'Raleway', sans-serif;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+.col-md-8 {
+    width: 100%;
+    padding: 0px 0px 0px 0px ;
 }
 
 .post-meta {
@@ -58,7 +78,7 @@ p {
 }
 
 .post-form textarea, .post-form input {
-    width: 100%;
+    width: auto;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -68,15 +88,25 @@ p {
     margin-right: 20px;
 }
 
-.post-form {
-    width: 120%;
-}
-
 .post {
-    width: 140%;
     padding: 10px 10px 10px 10px;
     background: #f5f5f5;
     margin-bottom: 10px;
+}
+
+#id_title {
+    width: 750px;
+    float: bottom;
+}
+
+#id_text {
+    width: 750px;
+    height: 250px;
+}
+
+label {
+    float: left;
+    padding-right: 10px;
 }
 
 .post h2 a, .post h2 a:visited {
