@@ -8,8 +8,7 @@
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
-    text-decoration: none;
-    vertical-align: middle;
+    height: auto;
 }
 
 .content {
@@ -21,6 +20,7 @@
 
 a.top-menu {
     font-family: 'Poppins', sans-serif;
+    margin-right: 0px;
 }
 
 h1, h2, h3, h4 {
@@ -96,12 +96,12 @@ p {
 }
 
 #id_title {
-    width: 750px;
+    width: 80vw;
     float: bottom;
 }
 
 #id_text {
-    width: 750px;
+    width: 80vw;
     height: 250px;
 }
 
