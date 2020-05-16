@@ -14,19 +14,38 @@
     margin-left: 40px;
 }
 
+a.top-menu {
+    font-family: 'Poppins', sans-serif;
+}
+
 h1, h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.post-content {
+    margin-top: 15px;
 }
 
 p {
     font-family: 'Raleway', sans-serif;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.post-meta {
+    font-family: 'Raleway', sans-serif;
+    float: right;
+    color: #828282;
 }
 
 .date {
-    font-family: 'Raleway', sans-serif;
-    margin-top: 4px;
-    float: right;
-    color: #828282;
+    margin-top: 0px;
+}
+
+.author {
+    margin-top: 0px;
 }
 
 .btn {
@@ -36,13 +55,6 @@ p {
 
 .save {
     float: right;
-}
-
-.author {
-    margin-top: 4px;
-    margin-right: 10px;
-    float: right;
-    color: #828282;
 }
 
 .post-form textarea, .post-form input {
