@@ -18,8 +18,9 @@
     width: auto;
 }
 
-a.top-menu {
+a.top-menu, a.top-menu:hover {
     font-family: 'Poppins', sans-serif;
+    font-size: 15pt;
     margin-right: 0px;
 }
 
@@ -43,7 +44,6 @@ h1, h2, h3, h4 {
     margin-top: 15px;
 }
 
-
 p {
     font-family: 'Raleway', sans-serif;
     margin-block-start: 0;
@@ -61,11 +61,7 @@ p {
     color: #828282;
 }
 
-.date {
-    margin-top: 0px;
-}
-
-.author {
+.date, .author {
     margin-top: 0px;
 }
 
@@ -82,10 +78,6 @@ p {
     float: left;
     margin-left: 35px;
     margin-top: 5px;
-}
-
-.post-form textarea, .post-form input {
-    width: auto;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
