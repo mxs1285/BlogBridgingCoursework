@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, CVItem
-from .forms import PostForm
+from .forms import PostForm, CVItemForm
 
 
 # Create your views here.
@@ -10,11 +10,9 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
-def cv_view(request):
+def cv_list(request):
     cvitems = CVItem.objects.order_by('priority')
-    for item in cvitems:
-        print(item)
-    return render(request, 'cv/cv_view.html', {'items': cvitems})
+    return render(request, 'cv/cv_list.html', {'items': cvitems})
 
 
 def post_detail(request, pk):
@@ -36,6 +34,19 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
+def cv_new(request):
+    if request.method == "POST":
+        form = CVItemForm(request.POST)
+        if form.is_valid():
+            cvitem = form.save(commit=False)
+            cvitem.author = request.user
+            cvitem.save()
+            return redirect('cv_list')
+    else:
+        form = CVItemForm()
+    return render(request, 'cv/cv_edit.html', {'form': form})
+
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -49,3 +60,17 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def cv_edit(request, pk):
+    cvitem = get_object_or_404(CVItem, pk=pk)
+    if request.method == "POST":
+        form = CVItemForm(request.POST, instance=cvitem)
+        if form.is_valid():
+            cvitem = form.save(commit=False)
+            cvitem.author = request.user
+            cvitem.save()
+            return redirect('cv_list.html')
+    else:
+        form = CVItemForm(instance=cvitem)
+    return render(request, 'cv/cv_edit.html', {'form': form})

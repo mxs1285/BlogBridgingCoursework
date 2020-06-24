@@ -4,6 +4,9 @@
     <h1 id="centre">Michael Staig</h1>
     <p id="centre" >Contact: mxs1285@student.bham.ac.uk</p>
     {% for item in items %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'cv_edit' pk=item.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <div class="post">
             <h2>{{ item.title }}</h2>
             <p class="post-list-content">{{ item.text|linebreaksbr }}</p>

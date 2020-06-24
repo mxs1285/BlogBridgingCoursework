@@ -108,9 +108,13 @@ p {
     height: 250px;
 }
 
+#id_author {
+    padding-bottom: 5px;
+}
+
 label {
     float: left;
-    width: 35px;
+    width: 50px;
     padding-right: 10px;
 }
 
