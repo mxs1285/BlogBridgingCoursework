@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>Bridging Coursework Blog</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/cv.css' %}">
+
+        <link rel="shortcut icon" href="{% static 'images/bensmile.ico' %}" />
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="https://www.youtube.com/watch?v=uubHtO21J_s" target="_blank">
+                <img width="55px" style="float: left; margin-right: 15px; vertical-align: middle" src="{% static 'images/poggers.ico' %}">
+            </a>
+            <h1><a href="/">CV</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

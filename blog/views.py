@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, CVItem
 from .forms import PostForm
 
 
@@ -8,6 +8,13 @@ from .forms import PostForm
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+
+def cv_view(request):
+    cvitems = CVItem.objects.order_by('priority')
+    for item in cvitems:
+        print(item)
+    return render(request, 'cv/cv_view.html', {'items': cvitems})
 
 
 def post_detail(request, pk):

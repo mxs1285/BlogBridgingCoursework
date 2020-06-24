@@ -1,0 +1,12 @@
+{% extends 'cv/base.html' %}
+
+{% block content %}
+    <h1 id="centre">Michael Staig</h1>
+    <p id="centre" >Contact: mxs1285@student.bham.ac.uk</p>
+    {% for item in items %}
+        <div class="post">
+            <h2>{{ item.title }}</h2>
+            <p class="post-list-content">{{ item.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
