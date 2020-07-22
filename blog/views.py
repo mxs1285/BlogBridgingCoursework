@@ -70,7 +70,8 @@ def cv_edit(request, pk):
             cvitem = form.save(commit=False)
             cvitem.author = request.user
             cvitem.save()
-            return redirect('cv_list.html')
+            cvitems = CVItem.objects.order_by('priority')
+            return render(request, 'cv/cv_list.html', {'items': cvitems})
     else:
         form = CVItemForm(instance=cvitem)
     return render(request, 'cv/cv_edit.html', {'form': form})

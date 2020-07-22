@@ -1,33 +1,36 @@
-from selenium import webdriver
+from django.urls import resolve
+from django.test import TestCase
 
-browser = webdriver.Chrome()
+from blog import functional_tests
+from blog.views import cv_list
 
-# Edith has heard about a cool new online to-do app. She goes
-# to check out its homepage
-browser.get('http://localhost:8000')
 
-# She notices the page title and header mention to-do lists
-assert 'Bridging Coursework Blog' in browser.title
+class CvTest(TestCase):
 
-# She is invited to enter a to-do item straight away
+    def testCVURL(self):
+        found = resolve('/cv/')
+        self.assertEqual(found.func, cv_list)
 
-# She types "Buy peacock feathers" into a text box (Edith's hobby
-# is tying fly-fishing lures)
+    def testSummary(self):
+        testclass = functional_tests.CvAddTest()
+        testclass.setUp()
+        testclass.testCanEditSummary()
+        testclass.tearDown()
 
-# When she hits enter, the page updates, and now the page lists
-# "1: Buy peacock feathers" as an item in a to-do list
+    def testQualifications(self):
+        testclass = functional_tests.CvAddTest()
+        testclass.setUp()
+        testclass.testCanEditQualifications()
+        testclass.tearDown()
 
-# There is still a text box inviting her to add another item. She
-# enters "Use peacock feathers to make a fly" (Edith is very methodical)
+    def testCoreSkills(self):
+        testclass = functional_tests.CvAddTest()
+        testclass.setUp()
+        testclass.testCanEditCoreSkills()
+        testclass.tearDown()
 
-# The page updates again, and now shows both items on her list
-
-# Edith wonders whether the site will remember her list. Then she sees
-# that the site has generated a unique URL for her -- there is some
-# explanatory text to that effect.
-
-# She visits that URL - her to-do list is still there.
-
-# Satisfied, she goes back to sleep
-
-browser.quit()
+    def testExperience(self):
+        testclass = functional_tests.CvAddTest()
+        testclass.setUp()
+        testclass.testCanEditExperience()
+        testclass.tearDown()
